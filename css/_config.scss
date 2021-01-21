@@ -1,0 +1,112 @@
+/*font Variables*/
+$mon: 'Montserrat', sans-serif;
+$open: 'Open Sans', sans-serif;
+$pt: 'PT Sans', sans-serif;
+//variables
+$show-home-image:true;
+$home-image:url(/img/img2.jpg);
+$background-opacity:0.8;
+
+/*Color Variables*/
+$baseColor: #ffcd00;
+$primary-color : #444; //dark gray
+$secondary-color : #e5e905;
+$DarkBlue: hsl(155, 74%, 46%);
+
+//color for logo
+$lime-green:  hsl(78, 100%, 54%);
+$green: #41a237;
+$siva: #968c72;
+$pfont: #444444;
+$gray: #afafaf;
+$orange: #ffa128;
+$dw: #e8e8e8a8;
+$dip: #31353d;
+// 
+.hide{
+    display:none;
+}
+// mixin
+@mixin easeIn{
+    transition:all 0.5 ease-out;
+
+}
+@mixin easeOut {
+    transition:all 0.6s ease-out;
+    
+}
+//  ===== NAVBAR MOBILE =========
+@mixin showNav {
+     &.bg-img{
+     &::after {
+         content: '';
+         z-index:0;
+         position:absolute;
+         top:0;
+         right:0;
+         left:0;
+         bottom:0;
+         width:100%;
+         height:800vh;
+         background:rgba($dip,$background-opacity);
+         
+      }
+     }}
+
+     @keyframes text {
+        from  {transform:translateX(1000%);
+    }    
+        
+        to{transform: translateX(0);}
+    }
+
+    @for $x from 1 through 6 {
+        .text:nth-child(#{$x}) {
+            animation: text $x * 230ms; 
+        }
+        }
+   
+// ================= MEDIA 
+
+@mixin mediaSm {
+
+    @media screen and (max-width: 695px){
+         @content;
+    }
+  }
+  @mixin mediaLg {
+
+    @media screen and (min-width:860px) and (max-width:1170px){
+         @content;
+    }
+}
+@mixin mediaXL {
+
+    @media screen and (min-width: 1200px){
+         @content;
+    }
+}
+
+ @mixin mediaMd {
+
+    @media  screen and (max-width: 860px){
+         @content;
+    }
+}
+
+ @mixin mediaXs {
+    @media screen and (max-width: 610px){
+        @content;
+   }
+
+}
+@mixin mediaXxs {
+    @media screen and (max-width: 400px){
+        @content
+    }
+}
+
+  
+ 
+
+
